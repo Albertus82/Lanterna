@@ -72,7 +72,7 @@ public class TerminalAppearance {
         this.boldTextFont = boldTextFont;
         this.colorPalette = colorPalette;
         this.useBrightColorsOnBold = useBrightColorsOnBold;
-        this.cjkFont = deriveCJKFont('桜');
+        this.cjkFont = deriveCJKFont('\u685C');
     }
     
     private Font deriveCJKFont(char character) {

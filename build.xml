@@ -21,17 +21,11 @@
 
 	<target name="compile" depends="clean">
 		<mkdir dir="${build.dir}/classes" />
-		<javac srcdir="src" destdir="${build.dir}/classes" source="1.6" target="1.6">
-			<classpath>
-				<fileset dir="lib">
-					<include name="**/*.jar"/>
-				</fileset>
-			</classpath>
-		</javac>
+		<javac srcdir="src" destdir="${build.dir}/classes" source="1.6" target="1.6" />
 	</target>
 
 	<target name="jar" depends="compile">
-		<jar destfile="${build.dir}/dist/${project.name.lowercase}.jar" basedir="${build.dir}/classes" level="9" />
+		<jar destfile="${build.dir}/dist/${project.name.lowercase}-${version.number}.jar" basedir="${build.dir}/classes" level="9" />
 	</target>
 
 </project>
