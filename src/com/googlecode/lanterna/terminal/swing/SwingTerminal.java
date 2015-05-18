@@ -542,9 +542,9 @@ public class SwingTerminal extends AbstractTerminal implements InputProvider
             graphics2D.fillRect(0, 0, getWidth(), getHeight());
             
             // Antialiasing - Begin.
-        	graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
-        	graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, 100);
-        	graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
+            graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, 100);
+            graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
             // Antialiasing - End.
             
             final FontMetrics fontMetrics = getGraphics().getFontMetrics(appearance.getNormalTextFont());
