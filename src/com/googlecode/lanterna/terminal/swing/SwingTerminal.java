@@ -30,6 +30,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -542,9 +543,10 @@ public class SwingTerminal extends AbstractTerminal implements InputProvider
             graphics2D.fillRect(0, 0, getWidth(), getHeight());
             
             // Antialiasing - Begin.
-            graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
-            graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, 100);
-            graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            Object renderingHints = Toolkit.getDefaultToolkit().getDesktopProperty("awt.font.desktophints");
+            if (renderingHints instanceof Map) {
+                graphics2D.addRenderingHints((Map<?, ?>) renderingHints);
+            }
             // Antialiasing - End.
             
             final FontMetrics fontMetrics = getGraphics().getFontMetrics(appearance.getNormalTextFont());
